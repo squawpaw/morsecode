@@ -38,6 +38,10 @@
 }
 html,body{height:100%;margin:0;padding:0}
 
+div{
+  border: black solid 1px;
+}
+
 .header-div{
   border: black solid 1px;
   @include box-shadow(4px, 2px, 8px, #000);
@@ -55,8 +59,7 @@ html,body{height:100%;margin:0;padding:0}
 .text-to-morse{
   border: silver solid 1px;
   float:left;
-  width: 45%;
-  max-width: 600px;
+  width: 95%;
   height: 100%;
   background-color: rgba(255,255,255,.2);
 }

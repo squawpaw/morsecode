@@ -39,46 +39,46 @@
 html,body{height:100%;margin:0;padding:0}
 
 div{
-  border: black solid 1px;
+ // border: black solid 1px;
 }
 
 .header-div{
+  margin: 0 4vh;
   border: black solid 1px;
   @include box-shadow(4px, 2px, 8px, #000);
   height: 90vh;
 }
-
-.plain-text-div{
-  background: #fff;
-  float: left;
-  width: 30%;
-  border: red solid 1px;
-  padding: 0px 5px;
+.morse-title{
+  font-family: 'Corben', cursive;
+  color: orange;
+  font-size: 3em;
+  text-align: center;
 }
 
 .text-to-morse{
   border: silver solid 1px;
-  float:left;
-  width: 95%;
   height: 100%;
   background-color: rgba(255,255,255,.2);
-}
+  width: 100%;
 
-.morse-wrapper{
-  float:right;
-  height:100%;
-  width: 55%;
+  textarea{
+    width: 65%;
+    height: 30vh;
+  }
 }
 
 .morse-dashes{
+  text-align: center;
   font-family: Georgia;
   color: #f55;
   font-size: 5em;
   background-color: rgba(255,255,255,.6);
-  height: 40vh;
-  max-height:400px;
-  width: 55%;
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
+  max-height:40vh;
+  overflow: auto;
+}  
+
+.blinky-div{
+  display: inline;
+  color: white;
+  background-color: orange;
 }

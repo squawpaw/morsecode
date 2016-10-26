@@ -70,7 +70,8 @@ class TextToEncode extends React.Component{
 	render(){
 		return(
 			<div>
-			<div className="morse-title">morse code translator</div>
+			<div className="morse-title">morse code translator 
+			-- --- .-. ... . ....... ..-. - .--</div>
 
 			<div className="text-to-morse">
 				<textarea type="text" 

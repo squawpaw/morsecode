@@ -50,10 +50,21 @@ div{
 }
 .morse-title{
   font-family: 'Corben', cursive;
-  color: orange;
+  color: black;
   font-size: 2em;
   text-align: center;
   letter-spacing: 0.2em;
+
+  #code1{
+    position: relative;
+    z-index: 4;
+  }
+
+  #code2{
+    position: relative;
+    z-index:5;
+    margin-top: -40px;
+  }
 }
 
 .text-to-morse{
@@ -82,4 +93,12 @@ div{
   display: inline;
   color: white;
   background-color: orange;
+}
+
+#morse-svg{
+  margin-top: -30px;
+  margin-bottom: -40px;
+  width: 40vw;
+  min-width: 400px;
+  z-index: -1;
 }

@@ -35,7 +35,7 @@ class MorseCodeWrapper extends React.Component{
 	}
 
 	render(){
-		console.log('rendering');
+		console.log('rendering...');
 		return(
 				<div className="morse-dashes" id="morse-dashes-id">{this.props.morseData}</div>
 			)
@@ -43,11 +43,59 @@ class MorseCodeWrapper extends React.Component{
 }
 
 class Blinky extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			flashText: ""
+		}
+		/*this.actionButton = this.actionButton.bind(this);*/
+	}
+	actionButtonWrapper(){
+		let count = -1;
+		let blinkStatus = 0;
+		let stateText = document.getElementById('morse-dashes-id').textContent;
+		let numText = stateText.replace(/\./g, 1)
+			.replace(/-/g, 3)
+			.replace(/\s/g, 6);
+		let numArr = numText.split('');
+		let numArrLen = numArr.length;
+
+	let actionButton = function(){
+
+  	let backToGreen = function(){
+	  $("#div3").css('background-color','green');
+	  setTimeout(actionButton, 200);
+	};
+	let greenToYellow = function(){
+	  $("#div3").css("background-color", "yellow");
+	  delayOn(numArr[count]);
+	}
+	let delayOn = function(msTime){
+	  setTimeout(backToGreen, numArr[count]*35);
+	}
+	let delaySpace = function(msTime){
+	  setTimeout(greenToYellow,10)
+	}
+
+	count += 1;
+	console.log(numArr);
+	if (count < numArrLen){
+	delaySpace(numArr[count]);
+	} else {};
+
+	}
+
+	actionButton();
+}
+
 	render(){
 		return (
 			<div className="blinky-div">
 			This div will be used for a future feature...
-			<button id="action">Transmit</button>
+			<button id="action" onClick={(e)=>{
+				e.preventDefault;
+				this.actionButtonWrapper()}}> 
+				Transmit </button>
 			<div id="div3">M</div>
 			</div>
 			)
@@ -88,7 +136,6 @@ class TextToEncode extends React.Component{
 			<div>
 			<div className="morse-title">
 			<span id="code1">-- --- .-. ... . .......</span> <TestForSVG /> <span id="code2">..-. - .--</span></div>
-
 			<div className="text-to-morse">
 				<textarea type="text" 
 				placeholder="type here"
@@ -116,14 +163,14 @@ function checkTextAreaHeight(){
    textArea.scrollTop = textArea.scrollHeight;
 }
 
-
+/*
 $(function(){
 	$("#action").click(function(){
 		actionButton();
 	})
 })
-
-
+*/
+/*
 let count = -1;
 let blinkStatus = 0;
 let testArr = [3,5,1,3,5,3,3,1,1,5,1,1,1];
@@ -150,7 +197,9 @@ let delaySpace = (msTime) =>{
 
 let actionButton = function(){
   count += 1;
+  console.log('button pushed');
   if (count < arrLen){
   delaySpace(testArr[count]);
   } else {}
   };
+*/

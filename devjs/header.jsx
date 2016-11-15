@@ -61,28 +61,28 @@ class Blinky extends React.Component{
 		let numArrLen = numArr.length;
 
 	let actionButton = function(){
+	let switchOn = function(msTime){
+		$("#div3").css('background-color','yellow');
+		delayTime(msTime);
+	}
 
-  	let backToGreen = function(){
-	  $("#div3").css('background-color','green');
-	  setTimeout(actionButton, 200);
-	};
-	let greenToYellow = function(){
-	  $("#div3").css("background-color", "yellow");
-	  delayOn(numArr[count]);
+	let delayTime = function(msTime){
+		setTimeout(switchOff, msTime*90);
 	}
-	let delayOn = function(msTime){
-	  setTimeout(backToGreen, numArr[count]*35);
-	}
-	let delaySpace = function(msTime){
-	  setTimeout(greenToYellow,10)
+
+	let switchOff = function(){
+		$("#div3").css('background-color','green');
+		setTimeout(actionButton, 20)
 	}
 
 	count += 1;
 	console.log(numArr);
-	if (count < numArrLen){
-	delaySpace(numArr[count]);
-	} else {};
 
+	if (count < numArrLen && numArr[count] == 6){
+		delayTime(3)
+	} else if (count < numArrLen){
+		switchOn(numArr[count])
+	};
 	}
 
 	actionButton();

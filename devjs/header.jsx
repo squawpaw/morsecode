@@ -61,6 +61,7 @@ class Blinky extends React.Component{
 		let numArrLen = numArr.length;
 
 	let actionButton = function(){
+
 	let switchOn = function(msTime){
 		$("#div3").css('background-color','yellow');
 		delayTime(msTime);
@@ -91,12 +92,11 @@ class Blinky extends React.Component{
 	render(){
 		return (
 			<div className="blinky-div">
-			This div will be used for a future feature...
 			<button id="action" onClick={(e)=>{
 				e.preventDefault;
 				this.actionButtonWrapper()}}> 
 				Transmit </button>
-			<div id="div3">M</div>
+			<div id="div3">Morse Flash!</div>
 			</div>
 			)
 	}
